@@ -19,11 +19,11 @@ To run this project, please type the command below being at the repo's root:
   Below is the executed Output
     ![](./screenshots/execute.png)
 
-Additional Info
+Additional Info:
   View of the API documentations in your browser
   ![](./screenshots/docs.png)
 
-  To open documentation in your browser, 
+  To open documentation in your browser, add "/docs" to your URL or
     ![click here](http://127.0.0.1:8000/docs)
 
 # Author:
