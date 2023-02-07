@@ -20,7 +20,6 @@ To run this project, please type the command below being at the repo's root:
     ![](./screenshots/execute.png)
 
 Additional Info
-
     View of the API documentations in your browser
     ![](./screenshots/docs.png)
 
