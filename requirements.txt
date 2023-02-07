@@ -1,0 +1,7 @@
+pandas==1.4.2
+numpy==1.21.5y
+scikit-learn==1.2.1
+black
+fastapi[all]
+uvicorn
+pydantic
