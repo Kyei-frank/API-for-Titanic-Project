@@ -20,11 +20,11 @@ To run this project, please type the command below being at the repo's root:
     ![](./screenshots/execute.png)
 
 Additional Info
-    View of the API documentations in your browser
-    ![](./screenshots/docs.png)
+  View of the API documentations in your browser
+  ![](./screenshots/docs.png)
 
-    To open documentation in your browser, click on:
-    ![](http://127.0.0.1:8000/docs)
+  To open documentation in your browser, 
+    ![click here](http://127.0.0.1:8000/docs)
 
 # Author:
 - [FK Baffour](https://www.linkedin.com/in/frank-kyei-baffour-403b60100/)
