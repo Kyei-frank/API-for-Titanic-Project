@@ -71,7 +71,7 @@ async def predict(input: ModelInput):
     return {'Prediction': output,
             'input': input}
 
-####################################################################
+###################################################################
 # Execution
 
 if __name__ == "__main__":
