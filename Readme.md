@@ -17,10 +17,10 @@ To run this project, please type the command below being at the repo's root:
     python src/api.py
 
   Below is the executed Output
-    View of the API documentations in your browser
     ![](./screenshots/execute.png)
 
 Additional Info
+
     View of the API documentations in your browser
     ![](./screenshots/docs.png)
 
