@@ -58,8 +58,24 @@ def make_prediction(Pclass,Sex,Age, Fare,Embarked, IsAlone):
 # ENDPOINT
 @app.post('/titanic')
 async def predict(input: ModelInput):
-    """__descr__
-    --details---
+    """__INTRODUCTION:__
+     
+On April 15, 1912, during her maiden voyage, the widely considered “unsinkable” RMS Titanic sank after colliding with an iceberg. Unfortunately, there weren’t enough lifeboats for everyone onboard, resulting in the death of 1502 out of 2224 passengers and crew.
+While there was some element of luck involved in surviving, it seems some groups of people were more likely to survive than others.
+    
+    DETAILS:
+    
+The table below gives a description on the variables required to make predictions.
+| Variable      | Definition       | Key   |
+| :------------ |:---------------: | -----:|
+| pclass        | Ticket Class     | 1st / 2nd / 3rd |
+| sex           | sex of passenger | Male / Female |
+| Age           | Age of passenger | Enter age of passenger       |
+| Fare          | Passenger fare   | Enter Fare of passenger    |
+| Embarked      | Port of Embarkation|C = Cherbourg, Q = Queenstown, S = Southampton|
+| IsAlone       | Whether passenger has relative onboard or not| 0 = (No) Passenger has relatives on board(parent/Children/spouses/siblings/), 1 = (Yes) Passenger is Alone |
+
+
     """
     output = make_prediction(Pclass = input.Pclass,
                              Sex = input.Sex,
