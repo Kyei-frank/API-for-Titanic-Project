@@ -45,15 +45,15 @@ def make_prediction(Pclass,Sex,Age, Fare,Embarked, IsAlone):
     
     # Passing data to pipeline to make prediction
     X = df
-    output = pipeline_of_my_app.predict(X).tolist()
+    pred_output = pipeline_of_my_app.predict(X).tolist()
+    prob_output = pipeline_of_my_app.predict_proba(X).tolist()
     
-    # # Labelling Model output
-    # if output == 0:
-    #     model_output = "Not Survived"
-    # else:
-    #     model_output = "Survived"
-
-    return output
+    if pred_output == 0:
+        explanation = 'Not Survived'
+    else:
+        explanation = 'Survived'
+    
+    return pred_output, prob_output, explanation
     
 # ENDPOINT
 @app.post('/titanic')
@@ -69,23 +69,25 @@ The table below gives a description on the variables required to make prediction
 | Variable      | Definition       | Key   |
 | :------------ |:---------------: | -----:|
 | pclass        | Ticket Class     | 1st / 2nd / 3rd |
-| sex           | sex of passenger | Male / Female |
+| sex           | sex of passenger | male / female |
 | Age           | Age of passenger | Enter age of passenger       |
 | Fare          | Passenger fare   | Enter Fare of passenger    |
 | Embarked      | Port of Embarkation|C = Cherbourg, Q = Queenstown, S = Southampton|
-| IsAlone       | Whether passenger has relative onboard or not| 0 = (No) Passenger has relatives on board(parent/Children/spouses/siblings/), 1 = (Yes) Passenger is Alone |
+| IsAlone       | Whether passenger has relative onboard or not| No = Passenger has relatives on board(parent/Children/spouses/siblings/), Yes = Passenger is Alone |
 
 
     """
-    output = make_prediction(Pclass = input.Pclass,
+    pred_output, prob_output, explanation = make_prediction(Pclass = input.Pclass,
                              Sex = input.Sex,
                              Age = input.Age,
                              Fare = input.Fare,
                              Embarked = input.Embarked,
                              IsAlone = input.IsAlone
                              )
-    return {'Prediction': output,
-            'input': input}
+    return {'Predicted Class': pred_output,
+            'Probability': prob_output,
+            'explanation': explanation
+            }
 
 ###################################################################
 # Execution
