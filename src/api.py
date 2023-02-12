@@ -46,12 +46,12 @@ def make_prediction(Pclass,Sex,Age, Fare,Embarked, IsAlone):
     # Passing data to pipeline to make prediction
     X = df
     pred_output = pipeline_of_my_app.predict(X).tolist()
-    prob_output = pipeline_of_my_app.predict_proba(X).tolist()
+    prob_output = np.max(pipeline_of_my_app.predict_proba(X)).tolist()
     
-    if pred_output == 0:
-        explanation = 'Not Survived'
-    else:
-        explanation = 'Survived'
+    if pred_output == [0]:
+        explanation = 'Passenger did not Survive'
+    elif pred_output == [1]:
+        explanation = ' Passenger Survived'
     
     return pred_output, prob_output, explanation
     
@@ -77,7 +77,8 @@ The table below gives a description on the variables required to make prediction
 
 
     """
-    pred_output, prob_output, explanation = make_prediction(Pclass = input.Pclass,
+    pred_output, prob_output, explanation = make_prediction(
+                             Pclass = input.Pclass,
                              Sex = input.Sex,
                              Age = input.Age,
                              Fare = input.Fare,
@@ -85,8 +86,9 @@ The table below gives a description on the variables required to make prediction
                              IsAlone = input.IsAlone
                              )
     return {'Predicted Class': pred_output,
-            'Probability': prob_output,
-            'explanation': explanation
+            'Confidence Probability':prob_output,
+            'prediction Explanation': explanation,
+            'Input': input
             }
 
 ###################################################################
