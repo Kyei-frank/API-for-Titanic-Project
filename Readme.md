@@ -24,7 +24,7 @@ Additional Info:
   ![](./screenshots/docs.png)
 
   To open documentation in your browser, add "/docs" to your URL or
-    ![click here](http://127.0.0.1:8000/docs)
+    [click here](http://127.0.0.1:8000/docs)
 
 # Author:
 - [FK Baffour](https://www.linkedin.com/in/frank-kyei-baffour-403b60100/)
