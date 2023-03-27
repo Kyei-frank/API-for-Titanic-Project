@@ -4,15 +4,15 @@ The purpose of this project is to create an ML API endpoint to predict against t
 # Setup
 Find the commands below to setup this project and execute it. You must install Python3 (<3.10)
 
-## Windows:
+### Windows:
 
     python -m venv venv; venv\Scripts\activate; python -m pip install -q --upgrade pip; python -m pip install -qr requirements.txt  
 
-## Linux & MacOs:
+### Linux & MacOs:
 
     python3 -m venv venv; source venv/bin/activate; python -m pip install -q --upgrade pip; python -m pip install -qr requirements.txt  
 
-## Execution
+### Execution
 To run this project, please type the command below being at the repo's root:
 
     python src/api.py
@@ -20,7 +20,7 @@ To run this project, please type the command below being at the repo's root:
   Below is the executed Output
     ![](./screenshots/execute.png)
 
-## Additional Info:
+### Additional Info:
   View of the API documentations in your browser
   ![](./screenshots/docs.png)
 
